@@ -9,25 +9,18 @@ const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 800;
 
-// 채워지게
-// ctx.fillRect(100, 100, 100, 200);
-
-// 비어지게
-// ctx.strokeRect(200, 100, 100, 200);
-
-// 선을 그린다.
-ctx.rect(50, 50, 100, 100);
-ctx.rect(150, 150, 100, 100);
-ctx.rect(250, 250, 100, 100);
-// 색을 채운다.
+// 처음 시작점은 0, 0이다
+// moveTo로 시작점을 바꾼다.
+ctx.moveTo(50, 50);
+// lineTo로 시작점에서부터 이동시킨다.
+ctx.lineTo(150, 50);
+ctx.lineTo(150, 150);
+ctx.lineTo(50, 150);
+ctx.lineTo(50, 50);
+ctx.stroke();
 ctx.fill();
 
-// 기존 경로와 다른 경로를 생성한다.
-ctx.beginPath();
-// 선을 그린다.
-ctx.rect(350, 350, 100, 100);
-ctx.rect(450, 450, 100, 100);
-// 채울 색을 설정한다.
-ctx.fillStyle = "red";
-// 색을 채운다.
-ctx.fill();
+//ctx.moveTo(50,50);  선을 긋지 않으면서 연필위치 이동
+//ctx.lineTo(150,50); // 선을 그으면서 연필위치 이동
+//ctx.stroke(); // 그은 선을 보여줌(내부 색 채우지 않음)
+//ctx.fill(); // 내부 색을 채움
